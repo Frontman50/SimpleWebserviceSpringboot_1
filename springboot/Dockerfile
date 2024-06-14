@@ -3,9 +3,7 @@ COPY pom.xml /tmp/
 COPY . /tmp/
 WORKDIR /tmp/
 
-
 RUN mvn clean install
-
 
 FROM eclipse-temurin:17-jre
 
@@ -13,7 +11,7 @@ RUN apt update -yqq && apt upgrade -yqq && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/
 
 WORKDIR /opt/leoooooo
-COPY ./target/*.jar ./leoooooo.jar
+COPY --from=MAVEN_TOOL_CHAIN /tmp/target/*.jar ./leoooooo.jar
 
 
 ARG VERSION=2.1.0
