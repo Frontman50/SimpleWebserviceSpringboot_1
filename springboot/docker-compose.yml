@@ -3,5 +3,5 @@ services:
   leoooooo:
     build: .
     ports:
-      # - ${TEST_WEBSERVICE_PORT:-9090}:9090
-      - "8080:9090"
+      - ${TEST_WEBSERVICE_PORT:-9090}:9090
+      # - "8080:9090"

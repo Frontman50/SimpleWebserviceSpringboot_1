@@ -21,4 +21,4 @@ ENV TEST_WEBSERVICE_PORT="9090"
 
 EXPOSE 9090
 
-ENTRYPOINT ["java", "-jar", "target/leoooooo.jar"]
+ENTRYPOINT ["java", "-jar", "leoooooo.jar"]
